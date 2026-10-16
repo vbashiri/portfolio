@@ -289,6 +289,10 @@ export const projects = [
   },
 ];
 
+projects.forEach((p) => {
+  p.slug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+});
+
 export const experience = [
   {
     role: "Game Developer",

@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import Icon from "./Icon";
-import MediaModal from "./MediaModal";
 import { projects } from "../data/portfolio";
 
 const filters = [
@@ -9,25 +8,13 @@ const filters = [
   { id: "personal", label: "Indie & jams" },
 ];
 
-const mediaFor = (project) => [
-  ...(project.youtube ? [{ type: "youtube", id: project.youtube }] : []),
-  ...project.images.map((src) => ({ type: "image", src })),
-];
-
-const linkLabel = (url) => {
-  if (url.includes("play.google.com")) return "Google Play";
-  if (url.includes("itch.io")) return "Play on itch.io";
-  if (url.includes("dropbox.com")) return "Download APK";
-  return "Visit website";
-};
-
-function ProjectCard({ project, onOpen, index }) {
+function ProjectCard({ project, index }) {
   return (
-    <button
+    <a
       className="card project pop-in"
       style={{ "--delay": `${index * 50}ms` }}
-      onClick={() => onOpen(project)}
-      aria-label={`Open ${project.title} details`}
+      href={`#/projects/${project.slug}`}
+      aria-label={`${project.title} details`}
     >
       <div className="project__art">
         <img className="project__blur" src={project.thumbnail} alt="" aria-hidden="true" loading="lazy" />
@@ -51,14 +38,12 @@ function ProjectCard({ project, onOpen, index }) {
           ))}
         </ul>
       </div>
-    </button>
+    </a>
   );
 }
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
-  const [open, setOpen] = useState(null);
-  const close = useCallback(() => setOpen(null), []);
 
   const visible = projects.filter((p) => filter === "all" || p.category === filter);
 
@@ -70,7 +55,7 @@ export default function Projects() {
             <p className="eyebrow eyebrow--pixel">01 · Selected work</p>
             <h2 className="section__title">Games I’ve built</h2>
             <p className="section__lead">
-              Studio titles, client work and the indie projects I make for fun. Tap a card for videos,
+              Studio titles, client work and the indie projects I make for fun. Open a game for videos,
               screenshots and what I did on it.
             </p>
           </div>
@@ -92,36 +77,11 @@ export default function Projects() {
         <div className="reveal">
           <div className="projects-grid" key={filter}>
             {visible.map((p, i) => (
-              <ProjectCard key={p.title} project={p} index={i} onOpen={setOpen} />
+              <ProjectCard key={p.title} project={p} index={i} />
             ))}
           </div>
         </div>
       </div>
-
-      {open && (
-        <MediaModal media={mediaFor(open)} title={open.title} onClose={close}>
-          <p className="eyebrow">
-            {open.year} · {open.studio || (open.category === "pro" ? "Client project" : "Indie project")}
-          </p>
-          <h3 className="modal__title">{open.title}</h3>
-          <p className="modal__genre">{open.genre}</p>
-          <ul className="modal__list">
-            {open.highlights.map((h) => (
-              <li key={h}>{h}</li>
-            ))}
-          </ul>
-          <ul className="tags">
-            {open.tags.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-          {open.url && (
-            <a className="btn btn--primary modal__cta" href={open.url} target="_blank" rel="noopener noreferrer">
-              {linkLabel(open.url)} <Icon name="external" size={16} />
-            </a>
-          )}
-        </MediaModal>
-      )}
     </section>
   );
 }

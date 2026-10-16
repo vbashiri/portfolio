@@ -6,7 +6,8 @@ export const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Adds `is-visible` to every `.reveal` element once it scrolls into view.
-export function useRevealOnScroll() {
+// Pass a value that changes when the page swaps content so new elements get observed.
+export function useRevealOnScroll(page) {
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window) || prefersReducedMotion()) {
@@ -26,7 +27,7 @@ export function useRevealOnScroll() {
     );
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [page]);
 }
 
 // Cycles through `words`, typing and deleting each one.
@@ -81,4 +82,20 @@ export function useActiveSection(ids) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [ids]);
   return active;
+}
+
+const projectSlug = () => {
+  const match = window.location.hash.match(/^#\/projects\/([\w-]+)/);
+  return match ? match[1] : null;
+};
+
+// Tiny hash router: "#/projects/<slug>" opens a project page, any other hash is the home page.
+export function useHashRoute() {
+  const [slug, setSlug] = useState(projectSlug);
+  useEffect(() => {
+    const onChange = () => setSlug(projectSlug());
+    window.addEventListener("hashchange", onChange);
+    return () => window.removeEventListener("hashchange", onChange);
+  }, []);
+  return slug;
 }
