@@ -73,7 +73,7 @@ import stunningLook from "../assets/images/arts/concept-art/StunningLook.jpg";
 import ged from "../assets/images/arts/concept-art/Ged.jpg";
 import wanderer from "../assets/images/arts/concept-art/Wanderer.JPG";
 
-import avatar from "../assets/images/header/Vahid.webp";
+import avatar from "../assets/images/header/Vahid.png";
 
 export const profile = {
   name: "Vahid Bashiri",
@@ -83,19 +83,16 @@ export const profile = {
   avatar,
   cv: `${process.env.PUBLIC_URL}/Vahid-Bashiri-CV.pdf`,
   roles: ["Game Developer", "Unity & C# Engineer", "Gameplay Programmer", "Tools & Systems Builder"],
-  tagline:
-    "I build mobile games in Unity and C# — from clean, testable architecture and in-house tools to the gameplay that makes people come back.",
+  summary: [
+    "Game developer with 6+ years building mobile games in Unity and C#. I design project architecture, build infrastructure and in-house tools, and implement the gameplay features players actually touch.",
+    "I’ve shipped Jump Up, My Monster Pet, Ninja Magic and Flying Hills on Google Play — over 2 million downloads combined — and today I build the Magrid early-learning game. On the side I publish my own games, like Bridge Run, Rebel and Playground.",
+  ],
   about: [
     "Game developer with 6+ years of experience focused on mobile games using Unity and C#. I enjoy every layer of a game: designing project architecture, building infrastructure systems, creating tools, and implementing gameplay features.",
     "Before games, I spent 2 years as a software engineer, and I hold an MSc in Software Engineering from Sharif University of Technology — my thesis was on predicting opponents’ movement in Dota 2.",
   ],
   interests:
     "Outside of work I design characters and draw fan art. Online games with friends are my favourite getaway, and indie games when I have time to sink into one. Rock and metal on the headphones; futsal and ping pong when I need to move.",
-  stats: [
-    { value: "6+", label: "Years in game dev" },
-    { value: "2M+", label: "Downloads on Google Play" },
-    { value: "12", label: "Games & prototypes" },
-  ],
   socials: [
     { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/vbashiri/" },
     { name: "GitHub", icon: "github", url: "https://github.com/vbashiri/" },

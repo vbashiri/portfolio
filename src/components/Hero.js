@@ -12,7 +12,7 @@ import fCloud1 from "../assets/images/banner/f_cload1.png";
 import fCloud2 from "../assets/images/banner/f_cload2.png";
 import fCloud3 from "../assets/images/banner/f_cload3.png";
 
-// depth: how strongly the layer follows the mouse / scroll (0 = static)
+// depth: how much the layer keeps up with the page when scrolling (1 = moves with the page)
 const clouds = [
   { src: bCloud1, depth: 0.15, className: "cloud cloud--0" },
   { src: bCloud1, depth: 0.15, className: "cloud cloud--1" },
@@ -40,28 +40,18 @@ export default function Hero() {
     const scene = sceneRef.current;
     if (!scene || prefersReducedMotion()) return undefined;
     let frame = 0;
-    const target = { x: 0, y: 0 };
 
     const apply = () => {
       frame = 0;
-      scene.style.setProperty("--mx", target.x.toFixed(3));
-      scene.style.setProperty("--my", target.y.toFixed(3));
       scene.style.setProperty("--scroll", Math.min(window.scrollY, window.innerHeight).toFixed(0));
     };
-    const schedule = () => {
+    const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(apply);
     };
-    const onMove = (e) => {
-      target.x = e.clientX / window.innerWidth - 0.5;
-      target.y = e.clientY / window.innerHeight - 0.5;
-      schedule();
-    };
 
-    window.addEventListener("mousemove", onMove, { passive: true });
-    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("scroll", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);
@@ -89,35 +79,43 @@ export default function Hero() {
       <div className="hero__fade" aria-hidden="true" />
 
       <div className="container hero__content">
-        <p className="eyebrow eyebrow--pixel hero__status">
-          <span className="pulse" /> Player 1 · Based in {profile.location}
-        </p>
-        <h1 className="hero__title">
-          Hi, I’m {profile.firstName}.
-          <span className="hero__role">
-            {role}
-            <span className="caret" aria-hidden="true" />
-          </span>
-        </h1>
-        <p className="hero__tagline">{profile.tagline}</p>
-
-        <div className="hero__actions">
-          <a href="#work" className="btn btn--primary">
-            <Icon name="play" size={18} /> See my games
-          </a>
-          <a href={profile.cv} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
-            <Icon name="download" size={18} /> Download CV
-          </a>
+        <div className="hero__id">
+          <div className="hero__avatar">
+            <img src={profile.avatar} alt={profile.name} />
+          </div>
+          <p className="hero__location">
+            <Icon name="pin" size={15} /> Based in {profile.location}
+          </p>
+          <div className="hero__links">
+            <a
+              href={profile.socials.find((s) => s.icon === "linkedin").url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <Icon name="linkedin" size={18} />
+            </a>
+            <a href={`mailto:${profile.email}`} aria-label="Email" title={profile.email}>
+              <Icon name="mail" size={18} />
+            </a>
+          </div>
         </div>
 
-        <ul className="hero__stats">
-          {profile.stats.map((s) => (
-            <li key={s.label}>
-              <strong>{s.value}</strong>
-              <span>{s.label}</span>
-            </li>
+        <div className="hero__text">
+          <h1 className="hero__title">
+            Hi, I’m {profile.firstName}.
+            <span className="hero__role">
+              {role}
+              <span className="caret" aria-hidden="true" />
+            </span>
+          </h1>
+          {profile.summary.map((p) => (
+            <p className="hero__summary" key={p}>
+              {p}
+            </p>
           ))}
-        </ul>
+        </div>
       </div>
 
       <a href="#work" className="hero__scroll" aria-label="Scroll to work">
