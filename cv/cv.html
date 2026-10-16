@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vahid Bashiri — Game Developer CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b2330;
+    --muted: #5b6676;
+    --navy: #16324f;
+    --accent: #e0662b;
+    --tint: #f3f5f8;
+    --line: #dde2e9;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #e9ecf0; }
+  body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 8.9pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+  b { font-weight: 600; }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 10mm auto;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 14px rgba(0,0,0,.12);
+  }
+  @media print {
+    html, body { background: #fff; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 11mm 14mm 8mm;
+    position: relative;
+  }
+  header::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 1.4mm; background: var(--accent);
+  }
+  .name { font-size: 26pt; font-weight: 800; letter-spacing: -.5px; line-height: 1.05; }
+  .role { font-size: 11.5pt; font-weight: 500; color: #ffd7c2; margin-top: 1.5mm; letter-spacing: .2px; }
+  .contact {
+    display: flex; flex-wrap: wrap; gap: 2mm 7mm;
+    margin-top: 5mm; font-size: 8.6pt; color: #dfe7f0;
+  }
+  .contact span { display: inline-flex; align-items: center; gap: 1.8mm; }
+  .contact svg { width: 3.4mm; height: 3.4mm; fill: var(--accent); flex: none; }
+
+  .compact-header { padding: 8mm 14mm 6mm; display: flex; justify-content: space-between; align-items: flex-end; }
+  .compact-header .name { font-size: 18pt; }
+  .compact-header .role { margin-top: 1mm; font-size: 10pt; }
+  .compact-header .page-label { font-size: 8.5pt; color: #dfe7f0; text-align: right; }
+
+  /* ---------- Layout ---------- */
+  .body { display: flex; flex: 1; min-height: 0; }
+  aside {
+    width: 64mm; flex: none;
+    background: var(--tint);
+    padding: 7mm 6mm 7mm 14mm;
+  }
+  main { flex: 1; padding: 7mm 14mm 7mm 7mm; }
+
+  h2 {
+    font-size: 9.2pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.4px; color: var(--navy);
+    display: flex; align-items: center; gap: 2.5mm;
+    margin-bottom: 3mm;
+  }
+  h2::after { content: ""; flex: 1; height: .35mm; background: var(--line); }
+  section + section { margin-top: 6mm; }
+  aside section + section { margin-top: 5mm; }
+
+  /* ---------- Sidebar ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+  .chip {
+    background: #fff; border: .25mm solid var(--line);
+    border-radius: 1.2mm; padding: .5mm 2mm;
+    font-size: 7.9pt; font-weight: 500; color: var(--navy);
+  }
+  .chip.hot { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+  .skill-list { list-style: none; }
+  .skill-list li { padding-left: 3.5mm; position: relative; margin-bottom: 1.5mm; font-size: 8.4pt; }
+  .skill-list li::before {
+    content: ""; position: absolute; left: 0; top: 1.9mm;
+    width: 1.4mm; height: 1.4mm; border-radius: 50%; background: var(--accent);
+  }
+
+  .edu { margin-bottom: 3.2mm; }
+  .edu-title { font-weight: 700; font-size: 8.7pt; }
+  .edu-meta { color: var(--muted); font-size: 8.1pt; }
+  .edu-note { font-size: 8.1pt; margin-top: .6mm; }
+
+  .ta { list-style: none; font-size: 8.1pt; }
+  .ta li { margin-bottom: 1.4mm; line-height: 1.3; }
+  .ta .when { color: var(--muted); display: block; font-size: 7.7pt; }
+
+  /* ---------- Main ---------- */
+  .summary { font-size: 9.1pt; }
+
+  .stats { display: flex; gap: 3mm; margin-top: 4mm; }
+  .stat {
+    flex: 1; border-left: .9mm solid var(--accent);
+    background: var(--tint); padding: 2mm 3mm;
+  }
+  .stat .num { font-size: 13pt; font-weight: 800; color: var(--navy); line-height: 1.1; }
+  .stat .lbl { font-size: 7.6pt; color: var(--muted); }
+
+  .job { position: relative; padding-left: 5mm; padding-bottom: 3.6mm; }
+  .job::before {
+    content: ""; position: absolute; left: .8mm; top: 1.6mm; bottom: -1mm;
+    width: .3mm; background: var(--line);
+  }
+  .job:last-child::before { display: none; }
+  .job::after {
+    content: ""; position: absolute; left: 0; top: 1.2mm;
+    width: 1.9mm; height: 1.9mm; border-radius: 50%;
+    background: #fff; border: .5mm solid var(--accent);
+  }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .job-title { font-weight: 700; font-size: 9.6pt; }
+  .job-date { font-size: 8pt; color: var(--muted); white-space: nowrap; font-weight: 500; }
+  .job-org { font-size: 8.6pt; color: var(--accent); font-weight: 600; margin-bottom: 1.2mm; }
+  .job-org a:hover { text-decoration: underline; }
+  .job ul { padding-left: 3.6mm; }
+  .job li { margin-bottom: .7mm; }
+  .job li::marker { color: var(--muted); }
+  .see { font-size: 8pt; color: var(--muted); font-style: italic; }
+
+  /* ---------- Projects page ---------- */
+  .projects { padding: 7mm 14mm 6mm; flex: 1; }
+  .projects section + section { margin-top: 5mm; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.2mm; }
+  .card {
+    border: .25mm solid var(--line); border-top: 1mm solid var(--navy);
+    border-radius: 1.4mm; padding: 3mm 3.6mm 3.2mm;
+    display: flex; flex-direction: column;
+  }
+  .card.indie { border-top-color: var(--accent); }
+  .card.wide { grid-column: 1 / -1; }
+  .card.wide ul { columns: 2; column-gap: 7mm; }
+  .card.wide li { break-inside: avoid; }
+  .card.thesis { padding: 2.4mm 3.6mm; }
+  .card.thesis h3 { font-size: 9.4pt; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; }
+  .card h3 { font-size: 10.2pt; font-weight: 700; color: var(--navy); }
+  .card .year { font-size: 7.8pt; color: var(--muted); white-space: nowrap; font-weight: 500; }
+  .card .ctx { font-size: 7.9pt; color: var(--accent); font-weight: 600; margin: .3mm 0 1.4mm; }
+  .card p { font-size: 8.3pt; }
+  .card ul { padding-left: 3.4mm; font-size: 8.3pt; }
+  .card li { margin-bottom: .5mm; }
+  .card-foot {
+    margin-top: auto; padding-top: 2mm;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 2mm;
+  }
+  .card-foot .chips { gap: 1mm; }
+  .card-foot .chip { font-size: 7.1pt; padding: .2mm 1.5mm; background: var(--tint); border-color: transparent; }
+  .link { font-size: 7.6pt; font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .link::after { content: " ↗"; }
+
+  footer {
+    padding: 0 14mm 6mm; font-size: 7.5pt; color: var(--muted);
+    display: flex; justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== PAGE 1 — CV ===================== -->
+<div class="page">
+  <header>
+    <div class="name">Vahid Bashiri</div>
+    <div class="role">Game Developer · Unity &amp; C# · Mobile Games</div>
+    <div class="contact">
+      <span><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Luxembourg</span>
+      <span><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7.4V17h16V7.4l-8 4.8z"/></svg><a href="mailto:gedbashiri@gmail.com">gedbashiri@gmail.com</a></span>
+      <span><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+352 661 470809</span>
+      <span><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.95 1.32-1.95 2.7V21h-4z"/></svg><a href="https://www.linkedin.com/in/vbashiri">linkedin.com/in/vbashiri</a></span>
+    </div>
+  </header>
+
+  <div class="body">
+    <aside>
+      <section>
+        <h2>Tech Stack</h2>
+        <div class="chips">
+          <span class="chip hot">C#</span>
+          <span class="chip hot">Unity</span>
+          <span class="chip">HLSL Shaders</span>
+          <span class="chip">Android Plugins</span>
+          <span class="chip">Unity DOTS</span>
+          <span class="chip">React Native</span>
+          <span class="chip">Git</span>
+          <span class="chip">Unit Testing</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Expertise</h2>
+        <ul class="skill-list">
+          <li><b>Architecture</b> — SOLID, design patterns, MVP, DI</li>
+          <li><b>Tooling</b> — custom editors, in-house SDKs</li>
+          <li><b>Live Ops</b> — events, content, mini games</li>
+          <li><b>Performance</b> optimization</li>
+          <li><b>F2P</b> monetization &amp; economy design</li>
+          <li><b>Game analytics</b>, data-driven decisions</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu">
+          <div class="edu-title">MSc, Software Engineering</div>
+          <div class="edu-meta">Sharif University of Technology<br>2018 – 2021</div>
+          <div class="edu-note">Thesis: <i>Predicting opponent’s movement in Dota 2</i></div>
+        </div>
+        <div class="edu">
+          <div class="edu-title">BSc, Computer Engineering</div>
+          <div class="edu-meta">University of Science and Technology<br>2013 – 2018</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Teaching</h2>
+        <ul class="ta">
+          <li><b>Software Engineering I</b><span class="when">Dr. M. Habibi · Fall 2019</span></li>
+          <li><b>Software Engineering I</b><span class="when">Dr. V. Rahimian · Fall 2019</span></li>
+          <li><b>Data Structures &amp; Algorithms</b><span class="when">Dr. H. Rahmani · Fall 2016</span></li>
+          <li><b>Formal Languages &amp; Automata</b><span class="when">Dr. H. Rahmani · Spring 2016</span></li>
+        </ul>
+      </section>
+    </aside>
+
+    <main>
+      <section>
+        <h2>Profile</h2>
+        <p class="summary">
+          Game developer with <b>6+ years</b> building mobile games in <b>Unity and C#</b>, spanning
+          project architecture, infrastructure systems, tooling and gameplay features. Backed by
+          <b>2 years of software engineering</b> and an <b>MSc in Software Engineering</b>, I care about
+          clean, testable code that lets live games keep growing.
+        </p>
+        <div class="stats">
+          <div class="stat"><div class="num">6+ yrs</div><div class="lbl">Game development</div></div>
+          <div class="stat"><div class="num">2M+</div><div class="lbl">Downloads on Google Play</div></div>
+          <div class="stat"><div class="num">MSc</div><div class="lbl">Software Engineering</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="job-head"><span class="job-title">Game Developer</span><span class="job-date">Jul 2023 – Present</span></div>
+          <div class="job-org"><a href="https://magrid.education/">Magrid Learning Solution</a></div>
+          <ul>
+            <li>Ship new content and features for a game live for <b>3+ years</b>, keeping full <b>backward compatibility</b>.</li>
+            <li>Designed a <b>shared client/server library</b> unifying models and validation.</li>
+            <li>Refactored the codebase to <b>MVP</b>; used the Strategy pattern and <b>dependency injection</b> for high unit-test coverage.</li>
+            <li>Built <b>smoke tests</b> that sped up releases and a <b>custom level/content editor</b>.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-title">Game Developer</span><span class="job-date">May 2021 – Oct 2023</span></div>
+          <div class="job-org"><a href="https://www.funtory.com/">Funtory Studio</a></div>
+          <ul>
+            <li>Developed <b>Jump Up 3D</b> and <b>My Monster Pet</b> — <b>2M+ downloads</b> on Google Play.</li>
+            <li>Built an asset-bundle SDK for <b>Google Play Instant</b>, making <b>Robo Race</b> the studio’s most profitable game.</li>
+            <li>Co-developed in-house production <b>infrastructure</b> with the CTO.</li>
+            <li>Technical point of contact for <b>3rd-party studios</b> on complex mechanics and optimization.</li>
+            <li>Tuned games with data engineers using <b>analytics</b> and player feedback.</li>
+            <li>Ran team workshops on Git, Unity DOTS and clean vs. disposable code.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-title">Game Developer</span><span class="job-date">Oct 2020 – Dec 2020</span></div>
+          <div class="job-org"><a href="https://segal.games/">Segal Games</a></div>
+          <ul>
+            <li>Designed and built a <b>hyper-casual game</b> from scratch, published on <b>Voodoo</b>.</li>
+            <li>Led a multi-disciplinary <b>team of 3</b>, owning resources and deadlines against the business plan.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-title">Software Engineer</span><span class="job-date">Oct 2018 – Sep 2020</span></div>
+          <div class="job-org"><a href="https://www.linkedin.com/company/intelligent-information-solutions-center/">Intelligent Information Solutions Center</a></div>
+          <ul>
+            <li>Developed the <b>React Native</b> app for Motoshub, including <b>native Android libraries</b> for file sharing and image editing; owned iOS maintenance.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head"><span class="job-title">Independent Game Developer</span><span class="job-date">Jan 2021 – Present</span></div>
+          <div class="job-org">Personal projects</div>
+          <p>Bridge Run, Playground, Rebel and Waterfall. <span class="see">Details on page 2.</span></p>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- ===================== PAGE 2 — PROJECTS ===================== -->
+<div class="page">
+  <header class="compact-header">
+    <div>
+      <div class="name">Vahid Bashiri</div>
+      <div class="role">Project Details</div>
+    </div>
+    <div class="page-label">gedbashiri@gmail.com<br>linkedin.com/in/vbashiri</div>
+  </header>
+
+  <div class="projects">
+    <section>
+      <h2>Professional Projects</h2>
+      <div class="grid">
+
+        <div class="card wide">
+          <div class="card-head"><h3>Magrid</h3><span class="year">2023 – Present</span></div>
+          <div class="ctx">Magrid Learning Solution · Educational game</div>
+          <ul>
+            <li>Extended a game in operation for 3+ years with new content and features, fully backward compatible.</li>
+            <li>Shared library unifying validation and models across client and server.</li>
+            <li>MVP refactor + Strategy pattern + DI → comprehensive unit tests; smoke tests for faster releases.</li>
+            <li>Custom editor for designing levels and content.</li>
+          </ul>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">C#</span><span class="chip">MVP</span><span class="chip">DI</span></div>
+            <a class="link" href="https://magrid.education/">magrid.education</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Robo Race</h3><span class="year">Funtory</span></div>
+          <div class="ctx">Google Play Instant · Studio’s most profitable game</div>
+          <ul>
+            <li>Developed an in-house SDK for asset bundles so the game could be delivered as a Google Play Instant game.</li>
+            <li>The instant delivery made Robo Race the company’s most profitable title.</li>
+          </ul>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">Asset Bundles</span><span class="chip">SDK</span></div>
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.funtory.roborace">Google Play</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Jump Up 3D &amp; My Monster Pet</h3><span class="year">Funtory</span></div>
+          <div class="ctx">Mobile · Google Play · 2M+ downloads</div>
+          <ul>
+            <li>Developed both games, reaching <b>over 2 million downloads</b> on Google Play.</li>
+            <li>Polished and improved with data engineers based on analytics data and user feedback.</li>
+          </ul>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Analytics</span></div>
+            <span><a class="link" href="https://play.google.com/store/apps/details?id=com.funtory.jumpdunk">Jump Up 3D</a> &nbsp;<a class="link" href="https://play.google.com/store/apps/details?id=com.funtory.monsterpet">Monster Pet</a></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Hyper-casual Game</h3><span class="year">2020</span></div>
+          <div class="ctx">Segal Games · Published on Voodoo</div>
+          <ul>
+            <li>Designed and built from scratch using SOLID and OOP design patterns.</li>
+            <li>Led a team of 3, managing resources and deadlines to deliver on the business plan.</li>
+          </ul>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Team lead</span></div>
+            <a class="link" href="https://segal.games/">segal.games</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Motoshub</h3><span class="year">2018 – 2020</span></div>
+          <div class="ctx">IIS Center · Social media app</div>
+          <ul>
+            <li>Mobile client for a social platform built on Oxwall, in React Native.</li>
+            <li>Native Android libraries for sharing files and editing images; owned iOS maintenance.</li>
+          </ul>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">React Native</span><span class="chip">Android</span><span class="chip">iOS</span></div>
+            <a class="link" href="https://www.oxwall.com/">Oxwall</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Personal &amp; Academic Projects</h2>
+      <div class="grid">
+
+        <div class="card indie">
+          <div class="card-head"><h3>Bridge Run</h3><span class="year">2022</span></div>
+          <div class="ctx">Bazaar Game Jam 2022 · Published on Google Play</div>
+          <p>Runner game designed, developed and published — originally created for the jam theme “a runner game”.</p>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">Game Jam</span></div>
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.Moolfa.BridgeRun&amp;hl=en">Google Play</a>
+          </div>
+        </div>
+
+        <div class="card indie">
+          <div class="card-head"><h3>Playground</h3><span class="year">Tech showcase</span></div>
+          <div class="ctx">itch.io</div>
+          <p>A sandbox to demonstrate and test shader writing, physics-based mechanics, and rope and water simulation.</p>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">HLSL</span><span class="chip">Physics</span><span class="chip">Simulation</span></div>
+            <a class="link" href="https://moolfa.itch.io/playground">itch.io</a>
+          </div>
+        </div>
+
+        <div class="card indie">
+          <div class="card-head"><h3>Rebel</h3><span class="year">Indie</span></div>
+          <div class="ctx">itch.io</div>
+          <p>Pixel-art runner platformer, designed and developed independently.</p>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">Pixel art</span><span class="chip">Platformer</span></div>
+            <a class="link" href="https://moolfa.itch.io/rebel">itch.io</a>
+          </div>
+        </div>
+
+        <div class="card indie">
+          <div class="card-head"><h3>Waterfall</h3><span class="year">Academic</span></div>
+          <div class="ctx">University of Science and Technology</div>
+          <p>Final project of the “Game Design” course, developed and published on itch.io.</p>
+          <div class="card-foot">
+            <div class="chips"><span class="chip">Unity</span><span class="chip">Game Design</span></div>
+            <a class="link" href="https://hvbashiri.itch.io/waterfall">itch.io</a>
+          </div>
+        </div>
+
+        <div class="card indie wide thesis">
+          <div class="card-head"><h3>MSc Thesis — Predicting Opponent’s Movement in Dota 2</h3><span class="year">Sharif University of Technology · 2021</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer><span>Vahid Bashiri · Game Developer</span><span>Page 2 / 2</span></footer>
+</div>
+
+</body>
+</html>
