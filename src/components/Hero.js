@@ -76,7 +76,6 @@ export default function Hero() {
         ))}
         <img className="layer layer--ground" style={{ "--depth": 0.8 }} src={foreground} alt="" />
       </div>
-      <div className="hero__fade" aria-hidden="true" />
 
       <div className="container hero__content">
         <div className="hero__id">

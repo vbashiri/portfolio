@@ -27,9 +27,8 @@ export default function Nav() {
   return (
     <header className={`nav ${scrolled ? "nav--scrolled" : ""} ${open ? "nav--open" : ""}`}>
       <div className="nav__inner">
-        <a href="#home" className="nav__logo" onClick={() => setOpen(false)} aria-label="Back to top">
-          <span className="nav__logo-mark">VB</span>
-          <span className="nav__logo-text">Vahid Bashiri</span>
+        <a href="#home" className="nav__home" onClick={() => setOpen(false)} aria-label="Home" title="Home">
+          <Icon name="home" size={20} />
         </a>
 
         <nav className="nav__links" aria-label="Main">

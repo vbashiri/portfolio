@@ -21,7 +21,7 @@ export default function Contact() {
         <div className="contact__card reveal">
           <p className="eyebrow eyebrow--pixel">05 · Contact</p>
           <h2 className="contact__title">
-            Let’s make something <span className="gradient-text">fun</span>.
+            Let’s make something <span className="accent-text">fun</span>.
           </h2>
           <p className="section__lead">
             Open to game developer roles and interesting collaborations. The fastest way to reach me is email.
