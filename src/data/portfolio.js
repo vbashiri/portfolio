@@ -89,17 +89,15 @@ export const profile = {
   email: "gedbashiri@gmail.com",
   avatar,
   cv: `${process.env.PUBLIC_URL}/Vahid-Bashiri-CV.pdf`,
-  roles: ["Game Developer", "Unity & C# Engineer", "Gameplay Programmer", "Tools & Systems Builder"],
+  roles: ["Game Developer", "Software Architect", "Gameplay Programmer", "Tools & Systems Builder"],
   summary: [
-    "Game developer with 6+ years building mobile games in Unity and C#. I design project architecture, build infrastructure and in-house tools, and implement the gameplay features players actually touch.",
-    "I’ve shipped Jump Up, My Monster Pet, Ninja Magic and Flying Hills on Google Play — over 2 million downloads combined — and today I build the Magrid early-learning game. On the side I publish my own games, like Bridge Run, Rebel and Playground.",
+    "Game developer with 6+ years building games in Unity and C#. With an additional 2 years of experience in software development and a master’s degree, I have a solid understanding of best practices in game development. I design project architecture, build infrastructure and in-house tools, and implement the gameplay features players actually touch.",
+    "I’ve shipped multiple games with over 2 million downloads. Today I work on Magrid, an early-learning game that has been live for more than 5 years, where I run live ops and ship new content and features without breaking anything for existing players. On the side, I make and publish my own indie games.",
   ],
   about: [
-    "Game developer with 6+ years of experience focused on mobile games using Unity and C#. I enjoy every layer of a game: designing project architecture, building infrastructure systems, creating tools, and implementing gameplay features.",
-    "Before games, I spent 2 years as a software engineer, and I hold an MSc in Software Engineering from Sharif University of Technology — my thesis was on predicting opponents’ movement in Dota 2.",
+    "I like designing characters and drawing fan arts as a hobby. Video games have always been my secret getaway tho. Online games which I can play with my friends are my favorites. Also, I like playing indie games when I have considerable free time. On top of that, I tend to watch movies and series. When I get bored of all these things, listening to rock/metal music and playing sports like futsal and ping pong is the way to go.",
+    "Here is some of my sketches.",
   ],
-  interests:
-    "Outside of work I design characters and draw fan art. Online games with friends are my favourite getaway, and indie games when I have time to sink into one. Rock and metal on the headphones; futsal and ping pong when I need to move.",
   socials: [
     { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/vbashiri/" },
     { name: "GitHub", icon: "github", url: "https://github.com/vbashiri/" },

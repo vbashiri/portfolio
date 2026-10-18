@@ -22,13 +22,6 @@ export default function About() {
             <p key={p}>{p}</p>
           ))}
           <p>{profile.interests}</p>
-          <p>
-            I also write about game development on{" "}
-            <a className="link" href="https://medium.com/@vbashiri1995" target="_blank" rel="noopener noreferrer">
-              Medium
-            </a>
-            .
-          </p>
         </div>
       </div>
 
