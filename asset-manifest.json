@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.4dd19044.css",
-    "main.js": "/portfolio/static/js/main.ee1fb101.js",
+    "main.js": "/portfolio/static/js/main.2e5a9f2f.js",
     "static/media/Illuminati.jpg": "/portfolio/static/media/Illuminati.e8d0c3124b2017f93c22.jpg",
     "static/media/Vahid.png": "/portfolio/static/media/Vahid.c1346bf0eaa04fa7c75b.png",
     "static/media/background.png": "/portfolio/static/media/background.8a3af9270e8daf13efaa.png",
@@ -62,10 +62,10 @@
     "static/media/f_cload1.png": "/portfolio/static/media/f_cload1.a97294774b2038220739.png",
     "index.html": "/portfolio/index.html",
     "main.4dd19044.css.map": "/portfolio/static/css/main.4dd19044.css.map",
-    "main.ee1fb101.js.map": "/portfolio/static/js/main.ee1fb101.js.map"
+    "main.2e5a9f2f.js.map": "/portfolio/static/js/main.2e5a9f2f.js.map"
   },
   "entrypoints": [
     "static/css/main.4dd19044.css",
-    "static/js/main.ee1fb101.js"
+    "static/js/main.2e5a9f2f.js"
   ]
 }
