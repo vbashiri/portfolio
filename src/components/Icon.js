@@ -22,6 +22,7 @@ const paths = {
   copy: "M16 1H4a2 2 0 0 0-2 2v14h2V3h12zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11z",
   check: "M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z",
   menu: "M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z",
+  expand: "M4 4h6v2H7.41l3.3 3.29-1.42 1.42L6 7.41V10H4zm10 0h6v6h-2V7.41l-3.29 3.3-1.42-1.42L16.59 6H14zM9.29 13.29l1.42 1.42L7.41 18H10v2H4v-6h2v2.59zm5.42 0L18 16.59V14h2v6h-6v-2h2.59l-3.3-3.29z",
 };
 
 export default function Icon({ name, size = 20, className }) {

@@ -16,10 +16,6 @@ export default function ProjectPage({ project }) {
   const next = projects[(index + 1) % projects.length];
 
   const job = project.studio && experience.find((e) => e.company === project.studio);
-  const media = [
-    ...(project.youtube ? [{ type: "youtube", id: project.youtube }] : []),
-    ...project.images.map((src) => ({ type: "image", src })),
-  ];
   const banner = project.images[0];
   const link = project.url && store(project.url);
 
@@ -85,13 +81,41 @@ export default function ProjectPage({ project }) {
         </aside>
 
         <div className="pp__body">
-          <Gallery key={project.slug} media={media} title={project.title} />
-          <h2 className="pp__h2">What I did</h2>
-          <ul className="pp__list">
-            {project.highlights.map((h) => (
-              <li key={h}>{h}</li>
+          {project.youtube && (
+            <div className="pp__video">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${project.youtube}?rel=0`}
+                title={`${project.title} gameplay video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
+
+          <section className="pp__section">
+            <h2 className="pp__h2">About the game</h2>
+            {project.about.map((p) => (
+              <p key={p} className="pp__text">
+                {p}
+              </p>
             ))}
-          </ul>
+          </section>
+
+          <section className="pp__section">
+            <h2 className="pp__h2">My contribution</h2>
+            <ul className="pp__list">
+              {project.contribution.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          </section>
+
+          {project.images.length > 0 && (
+            <section className="pp__section">
+              <h2 className="pp__h2">Gallery</h2>
+              <Gallery key={project.slug} images={project.images} title={project.title} />
+            </section>
+          )}
         </div>
       </div>
 

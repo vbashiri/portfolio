@@ -114,11 +114,16 @@ export const projects = [
     thumbnail: magrid0,
     images: [],
     tags: ["Unity", "C#", "MVP", "Unit tests"],
-    highlights: [
-      "Shipped new content and features for a game live for 3+ years with full backward compatibility",
-      "Built a shared library unifying models and validation across client and server",
-      "Refactored to MVP with the Strategy pattern and dependency injection for high test coverage",
-      "Developed an editor for designing new levels and games",
+    about: [
+      "Magrid is an early-learning game that helps young children build maths and cognitive skills through short, playful exercises on a tablet. It’s designed to work without relying on language, so children can learn whatever language they speak at home.",
+      "The game has been live in classrooms for over three years, so every update has to land without breaking existing players, saved progress or content.",
+    ],
+    contribution: [
+      "Ship new content and features for the live game while keeping full backward compatibility with existing data and older clients",
+      "Designed a shared library that unifies models and validation between the Unity client and the server, so both sides agree on the same rules",
+      "Refactored the codebase to MVP, using the Strategy pattern and dependency injection so gameplay logic can be covered by unit tests",
+      "Wrote smoke tests that catch regressions early and make releases faster",
+      "Built a custom editor that lets the team design new levels and games without touching code",
     ],
   },
   {
@@ -131,9 +136,13 @@ export const projects = [
     thumbnail: hashtkhan0,
     images: [hashtkhan1, hashtkhan2, hashtkhan3],
     tags: ["Unity", "C#", "Card game"],
-    highlights: [
-      "First Persian card game in the spirit of Hearthstone",
-      "Refactored the codebase and added new features for the game’s relaunch",
+    about: [
+      "Hasht Khan is the first Persian collectible card game, in the spirit of Hearthstone. Players build decks of heroes and creatures drawn from Persian mythology and face off in turn-based duels.",
+      "The game was being prepared for a relaunch, which meant reworking an existing codebase rather than starting fresh.",
+    ],
+    contribution: [
+      "Refactored the existing codebase to make it easier to maintain and extend for the relaunch",
+      "Implemented new features on top of the cleaned-up architecture",
     ],
   },
   {
@@ -145,9 +154,14 @@ export const projects = [
     thumbnail: bridgeRun0,
     images: [bridgeRun1, bridgeRun2, bridgeRun3],
     tags: ["Unity", "Game jam", "Google Play"],
-    highlights: [
-      "Created for Bazaar Game Jam 2022, then designed and developed from scratch to release",
-      "Redesigned levels and mechanics based on player statistics",
+    about: [
+      "Bridge Run is a 3D runner where you race rivals across platforms floating over lava. Grab bricks of your colour, carry them in a growing stack, and spend them to build stairs and bridges up to the next level before anyone else.",
+      "It started at Bazaar Game Jam 2022, whose theme was “a runner game”, and I kept developing it after the jam until it was released on Google Play.",
+    ],
+    contribution: [
+      "Designed and developed the whole game from scratch as a solo project, from jam prototype to published release",
+      "Built the brick-stacking and bridge-building mechanics, plus the rival runners that compete for the same bricks",
+      "Tracked player statistics after launch and used them to redesign levels and tune mechanics",
     ],
   },
   {
@@ -160,9 +174,14 @@ export const projects = [
     thumbnail: monster0,
     images: [monster1, monster2, monster3],
     tags: ["Unity", "C#", "Character AI"],
-    highlights: [
-      "Developed character behaviour and interactions",
-      "Helped design mechanics and polish the game",
+    about: [
+      "My Monster Pet is a virtual-pet game from Funtory: you raise your own monster, interact with it, and take it into battles that use abilities like fire, healing and wind attacks.",
+      "It passed 2 million downloads on Google Play.",
+    ],
+    contribution: [
+      "Developed the monsters’ character behaviour and how they react when the player interacts with them",
+      "Helped design game mechanics together with the game designer",
+      "Polished the game with the data team, using analytics and player feedback",
     ],
   },
   {
@@ -176,9 +195,14 @@ export const projects = [
     thumbnail: ninjaMagic0,
     images: [ninjaMagic1, ninjaMagic2],
     tags: ["Unity", "C#", "Upgrade systems"],
-    highlights: [
-      "Designed and developed from scratch to release, with two major iterations after launch",
-      "Built 20+ distinct mechanics with an upgrade system",
+    about: [
+      "Ninja Magic is a first-person action game where you are a ninja casting elemental jutsu (wind, water, earth, fire and lightning) to fight off waves of enemy ninjas.",
+      "Each element plays differently, and players unlock and upgrade their powers as they progress.",
+    ],
+    contribution: [
+      "Designed and developed the game from scratch through to release on Google Play",
+      "Built more than 20 distinct mechanics and the upgrade system that ties them together",
+      "Led two major iterations after launch, reworking the game based on how players actually played it",
     ],
   },
   {
@@ -192,9 +216,14 @@ export const projects = [
     thumbnail: flyingHills0,
     images: [flyingHills1, flyingHills2, flyingHills3, flyingHills4, flyingHills5],
     tags: ["Unity", "Mesh rendering", "Physics"],
-    highlights: [
-      "Built an optimized mesh-rendering system and a challenging physics-based vehicle as the core mechanic",
-      "Worked closely with a designer through to completion",
+    about: [
+      "Flying Hills is a physics-based driving game. You steer a pickup truck loaded with cargo over steep, rolling hills, where too much speed sends the truck flying and too little leaves you stuck.",
+      "The vehicle’s physics is the core of the game, so it had to feel challenging but fair on every phone.",
+    ],
+    contribution: [
+      "Built the physics-based vehicle that is the game’s core mechanic, tuning its handling until it felt challenging but fair",
+      "Developed an optimized mesh-rendering system for the hilly road so it runs smoothly on mobile",
+      "Worked closely with the game designer from first prototype to release",
     ],
   },
   {
@@ -208,9 +237,14 @@ export const projects = [
     thumbnail: jumpUp0,
     images: [jumpUp1, jumpUp2, jumpUp3],
     tags: ["Unity", "C#", "Live ops"],
-    highlights: [
-      "Extended the game, increasing revenue by 100%",
+    about: [
+      "Jump Up is an arcade game about bouncing across city rooftops on trampolines and slam-dunking basketballs into hoops while racing other players to the finish.",
+      "It passed 2 million downloads on Google Play.",
+    ],
+    contribution: [
+      "Extended the live game with new content and features, which doubled its revenue",
       "Polished existing features in close collaboration with the game designer",
+      "Tuned the game with the data team based on analytics and player feedback",
     ],
   },
   {
@@ -223,9 +257,14 @@ export const projects = [
     thumbnail: playground0,
     images: [playground1, playground2, playground3],
     tags: ["HLSL", "Shaders", "Simulation"],
-    highlights: [
-      "Each level is a minimal prototype exploring one idea",
-      "Water simulation, rope physics and shader-driven features",
+    about: [
+      "Playground is a collection of small levels, each a minimal prototype built around one technical idea. It’s my sandbox for trying out shaders, physics-based mechanics and simulations.",
+      "It’s free to play on itch.io.",
+    ],
+    contribution: [
+      "Designed and built every level myself",
+      "Wrote HLSL shaders for the game’s visual effects",
+      "Implemented water simulation for the lake level and rope physics for the physics-based mechanics",
     ],
   },
   {
@@ -239,9 +278,13 @@ export const projects = [
     thumbnail: core0,
     images: [core1, core2, core3],
     tags: ["Unity", "C#", "Team lead"],
-    highlights: [
-      "Designed and developed the game from scratch",
-      "Managed a team of 3 people",
+    about: [
+      "Core is a minimalist hyper-casual timing game. A pointer sweeps around the core, and you tap at exactly the right moment to score, chain “Perfect” hits and keep your run alive.",
+      "It was built to be published with Voodoo, so it had to be quick to learn and polished from the first second.",
+    ],
+    contribution: [
+      "Designed and developed the game from scratch, using SOLID principles and object-oriented design patterns",
+      "Led a multi-disciplinary team of 3, managing resources and deadlines to deliver on the business plan",
     ],
   },
   {
@@ -254,9 +297,13 @@ export const projects = [
     thumbnail: rebel0,
     images: [rebel1, rebel2, rebel3, rebel4],
     tags: ["Unity", "Pixel art", "Animation"],
-    highlights: [
-      "Designed and developed the game logic",
-      "Worked on character design and animations — the hero scene on this site is from Rebel",
+    about: [
+      "Rebel is a pixel-art runner platformer. A lone swordsman cuts through shadowy soldiers and dodges gunfire across hand-drawn forests and rivers.",
+      "It’s an independent project: I built it on my own and published it on itch.io. The night scene at the top of this site comes from Rebel.",
+    ],
+    contribution: [
+      "Designed and developed the game logic and combat",
+      "Designed the characters and drew their pixel-art animations",
     ],
   },
   {
@@ -268,9 +315,13 @@ export const projects = [
     thumbnail: hexa0,
     images: [hexa1, hexa2, hexa3],
     tags: ["Unity", "Level design"],
-    highlights: [
-      "My first published game on Google Play",
-      "Developed the level manager and designed new levels",
+    about: [
+      "Hexa Dominoes is a puzzle game played on a hexagonal board. You flip and colour tiles to reach the gems, trying to collect them all in as few moves as possible.",
+      "It was my first published game on Google Play.",
+    ],
+    contribution: [
+      "Developed the level manager that loads, tracks and unlocks puzzles",
+      "Designed new levels and tuned their difficulty",
     ],
   },
   {
@@ -282,9 +333,13 @@ export const projects = [
     thumbnail: waterfall0,
     images: [waterfall1, waterfall2],
     tags: ["Unity", "Animation"],
-    highlights: [
-      "Final project for the Fundamentals of Game Design course",
-      "Worked on character animations and core gameplay mechanics",
+    about: [
+      "Waterfall is a 2D platformer set inside a stone castle, where a swordsman and an archer fight across hanging platforms.",
+      "It was our final project for the Fundamentals of Game Design course at Iran University of Science and Technology, and it’s published on itch.io.",
+    ],
+    contribution: [
+      "Worked on the character animations",
+      "Implemented core gameplay mechanics",
     ],
   },
 ];
