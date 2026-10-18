@@ -73,6 +73,9 @@ import stunningLook from "../assets/images/arts/concept-art/StunningLook.jpg";
 import ged from "../assets/images/arts/concept-art/Ged.jpg";
 import wanderer from "../assets/images/arts/concept-art/Wanderer.JPG";
 
+import pintBackground from "../assets/images/projects/anotherpint/background.png";
+import pintLogo from "../assets/images/projects/anotherpint/logo.png";
+
 import avatar from "../assets/images/header/Vahid.png";
 
 export const profile = {
@@ -99,6 +102,21 @@ export const profile = {
     { name: "Medium", icon: "medium", url: "https://medium.com/@vbashiri1995" },
     { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/moolfa/" },
   ],
+};
+
+// The game I'm building right now, featured in its own full-screen panel on the home page.
+export const passionProject = {
+  title: "Another Pint",
+  logo: pintLogo,
+  background: pintBackground,
+  status: "Coming 2027",
+  platform: "PC",
+  genre: "Tavern management sim",
+  about: [
+    "Starting with little more than an abandoned shack, you build, decorate and run your own medieval tavern. Brew ales, wines and teas from ingredients you gather and farm, get to know a cast of picky patrons, and explore the island when the doors close for the night.",
+    "It’s a systems-driven management game, and every choice you make shapes who walks through your door and what they think of you.",
+  ],
+  steam: "https://store.steampowered.com/app/3150160/Another_Pint/",
 };
 
 // category: "pro" = studio / client work, "personal" = indie, jam and academic work

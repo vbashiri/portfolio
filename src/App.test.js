@@ -6,6 +6,8 @@ it("renders the hero and project grid", () => {
   render(<App />);
   expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Vahid");
   expect(screen.getByRole("heading", { name: "Games I’ve built" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Another Pint" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Wishlist on Steam/ })).toHaveAttribute("href", expect.stringContaining("store.steampowered.com/app/3150160"));
 });
 
 it("renders a project page from the hash", () => {

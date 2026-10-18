@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.scss";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import Passion from "./components/Passion";
 import Projects from "./components/Projects";
 import Journey from "./components/Journey";
 import Skills from "./components/Skills";
@@ -40,6 +41,7 @@ export default function App() {
         ) : (
           <>
             <Hero />
+            <Passion />
             <Projects />
             <Journey />
             <Skills />
