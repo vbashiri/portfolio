@@ -1,10 +1,12 @@
 import React, { useCallback, useState } from "react";
 import MediaModal from "./MediaModal";
 import { profile, sketches } from "../data/portfolio";
+import { usePageLoaded } from "../hooks";
 
 export default function About() {
   const [openAt, setOpenAt] = useState(null);
   const close = useCallback(() => setOpenAt(null), []);
+  const pageLoaded = usePageLoaded();
 
   return (
     <section id="about" className="section section--alt">
@@ -30,7 +32,13 @@ export default function About() {
           <div className="sketches__grid">
             {sketches.map((src, i) => (
               <button key={src} className="sketch" onClick={() => setOpenAt(i)} aria-label={`Open sketch ${i + 1}`}>
-                <img src={src} alt={`Sketch ${i + 1}`} loading="lazy" />
+                <img
+                  src={pageLoaded ? src : undefined}
+                  alt={`Sketch ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                />
               </button>
             ))}
           </div>

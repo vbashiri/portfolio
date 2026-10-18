@@ -2019,3 +2019,17 @@ ol {
     transition: none;
   }
 }
+
+// Gallery images are held back until the page has loaded; keep a placeholder box meanwhile.
+.gallery__item img:not([src]),
+.sketch img:not([src]) {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(110deg, var(--surface) 30%, var(--surface-strong) 50%, var(--surface) 70%) 0 0 / 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

@@ -99,3 +99,26 @@ export function useHashRoute() {
   }, []);
   return slug;
 }
+
+// True once the page (and everything it requested up front) has finished loading,
+// plus an idle tick. Use it to hold back non-critical images so they load last.
+export function usePageLoaded() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    let idle;
+    const ready = () => {
+      const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 200));
+      idle = schedule(() => setLoaded(true));
+    };
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready, { once: true });
+    return () => {
+      window.removeEventListener("load", ready);
+      if (idle && window.cancelIdleCallback) window.cancelIdleCallback(idle);
+      else clearTimeout(idle);
+    };
+  }, []);
+
+  return loaded;
+}
