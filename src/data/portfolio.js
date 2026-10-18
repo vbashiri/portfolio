@@ -76,6 +76,10 @@ import wanderer from "../assets/images/arts/concept-art/Wanderer.JPG";
 import pintBackground from "../assets/images/projects/anotherpint/background.png";
 import pintLogo from "../assets/images/projects/anotherpint/logo.png";
 
+import witPreview from "../assets/images/tools/wit.jpg";
+import mvpCover from "../assets/images/articles/mvp-unity.png";
+import instantCover from "../assets/images/articles/instant-play.jpg";
+
 import avatar from "../assets/images/header/Vahid.png";
 
 export const profile = {
@@ -433,11 +437,41 @@ export const education = [
   },
 ];
 
-export const skills = [
-  { group: "Engine & languages", items: ["Unity", "C#", "HLSL shaders", "Unity DOTS", "JavaScript", "React Native"] },
-  { group: "Architecture", items: ["SOLID", "Design patterns", "MVP", "Dependency injection", "Unit & smoke testing"] },
-  { group: "Game craft", items: ["Gameplay systems", "Custom editors & tools", "Performance optimization", "Physics & simulation"] },
-  { group: "Live games", items: ["Live ops", "F2P monetization", "Economy design", "Game analytics", "Android plugins"] },
+// Featured tool, shown large at the top of the "Tools & writing" section.
+export const featuredTool = {
+  name: "Wit",
+  kind: "Narrative design tool",
+  youtube: "VEHTnPa6LaU",
+  preview: witPreview,
+  summary:
+    "A graph-based narrative editor that lives inside Unity. Writers lay out branching dialogue as connected nodes, where each node holds a speaker and a line, and see the scene play out in-game without waiting on a programmer.",
+  points: [
+    "Node graph for branching conversations, with input/output ports for choices and flow",
+    "Built with UI Toolkit as a native Unity editor window",
+    "Dialogue data feeds straight into the game’s RPG dialogue UI",
+  ],
+  tags: ["Unity", "C#", "UI Toolkit", "Editor tooling"],
+};
+
+export const articles = [
+  {
+    title: "MVP architecture adapted for Unity",
+    url: "https://medium.com/@vbashiri1995/mvp-architecture-adapted-for-unity-6dc446df3703",
+    date: "Jan 2026",
+    cover: mvpCover,
+    summary:
+      "How we structured Magrid, an app full of menus and mini-games, with Model–View–Presenter. It also covers keeping logic out of MonoBehaviours so it stays testable, and the trade-offs we hit along the way.",
+    tags: ["Architecture", "Unity", "MVP"],
+  },
+  {
+    title: "Google Instant Play + Unity Asset Bundles",
+    url: "https://medium.com/@vbashiri1995/google-instant-play-unity-asset-bundle-google-asset-delivery-f63e844b77c4",
+    date: "Aug 2023",
+    cover: instantCover,
+    summary:
+      "Instant games must stay under 20 MB, which is tough for a Unity game. The article shows how to shrink the base build and stream the rest later with asset bundles and Google Asset Delivery.",
+    tags: ["Instant games", "Asset bundles", "Unity"],
+  },
 ];
 
 export const sketches = [parandthe, wanderer, strygwyr, nightmare, stunningLook, ged];

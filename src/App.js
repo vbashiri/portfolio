@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import Passion from "./components/Passion";
 import Projects from "./components/Projects";
 import Journey from "./components/Journey";
-import Skills from "./components/Skills";
+import Writing from "./components/Writing";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectPage from "./components/ProjectPage";
@@ -44,7 +44,7 @@ export default function App() {
             <Passion />
             <Projects />
             <Journey />
-            <Skills />
+            <Writing />
             <About />
           </>
         )}
