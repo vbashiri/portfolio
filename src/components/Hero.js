@@ -117,7 +117,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <a href="#work" className="hero__scroll" aria-label="Scroll to work">
+      <a href="#now" className="hero__scroll" aria-label="Scroll to work">
         <Icon name="arrowDown" size={18} />
       </a>
     </section>
