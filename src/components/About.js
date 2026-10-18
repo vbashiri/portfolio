@@ -11,7 +11,7 @@ export default function About() {
       <div className="container about">
         <div className="about__portrait reveal">
           <div className="about__frame">
-            <img src={profile.avatar} alt={profile.name} loading="lazy" />
+            <img src={profile.portrait} alt={profile.name} loading="lazy" />
           </div>
         </div>
 
@@ -21,7 +21,6 @@ export default function About() {
           {profile.about.map((p) => (
             <p key={p}>{p}</p>
           ))}
-          <p>{profile.interests}</p>
         </div>
       </div>
 
@@ -31,7 +30,7 @@ export default function About() {
           <div className="sketches__grid">
             {sketches.map((src, i) => (
               <button key={src} className="sketch" onClick={() => setOpenAt(i)} aria-label={`Open sketch ${i + 1}`}>
-                <img src={src} alt="" loading="lazy" />
+                <img src={src} alt={`Sketch ${i + 1}`} loading="lazy" />
               </button>
             ))}
           </div>

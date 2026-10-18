@@ -69,9 +69,10 @@ import waterfall2 from "../assets/images/projects/waterfall/waterfall2.png";
 import parandthe from "../assets/images/arts/concept-art/ParandThe.jpg";
 import strygwyr from "../assets/images/arts/concept-art/Strygwyr.JPG";
 import nightmare from "../assets/images/arts/concept-art/Nightmare.jpg";
-import stunningLook from "../assets/images/arts/concept-art/StunningLook.jpg";
 import ged from "../assets/images/arts/concept-art/Ged.jpg";
 import wanderer from "../assets/images/arts/concept-art/Wanderer.JPG";
+import ghazal from "../assets/images/arts/concept-art/Ghazal.jpg";
+import illuminati from "../assets/images/arts/concept-art/Illuminati.jpg";
 
 import pintBackground from "../assets/images/projects/anotherpint/background.png";
 import pintLogo from "../assets/images/projects/anotherpint/logo.png";
@@ -81,6 +82,7 @@ import mvpCover from "../assets/images/articles/mvp-unity.png";
 import instantCover from "../assets/images/articles/instant-play.jpg";
 
 import avatar from "../assets/images/header/Vahid.png";
+import portrait from "../assets/images/header/ArtVahid.jpg";
 
 export const profile = {
   name: "Vahid Bashiri",
@@ -88,6 +90,7 @@ export const profile = {
   location: "Luxembourg",
   email: "gedbashiri@gmail.com",
   avatar,
+  portrait, // casual photo shown next to the sketchbook in About
   cv: `${process.env.PUBLIC_URL}/Vahid-Bashiri-CV.pdf`,
   roles: ["Game Developer", "Software Architect", "Gameplay Programmer", "Tools & Systems Builder"],
   summary: [
@@ -472,4 +475,4 @@ export const articles = [
   },
 ];
 
-export const sketches = [parandthe, wanderer, strygwyr, nightmare, stunningLook, ged];
+export const sketches = [ghazal, parandthe, illuminati, wanderer, strygwyr, nightmare, ged];
